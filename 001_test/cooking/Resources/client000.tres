@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://cooking/script/client_test.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+cname = "BusinessMan"
+order = [ 0, "Strawberry", "Water" ]
+points = 10
+patience = 4
