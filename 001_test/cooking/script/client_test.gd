@@ -5,9 +5,10 @@ class_name client
 export var cname : String
 
 
-export var test = 2
+var test = Global.food_dic.values()
 
-export(Array, String) var order = []
+export var order : Resource
+
 
 
 

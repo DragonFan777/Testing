@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "client",
 "language": "GDScript",
 "path": "res://cooking/script/client_test.gd"
+}, {
+"base": "Resource",
+"class": "order",
+"language": "GDScript",
+"path": "res://cooking/script/order.gd"
 } ]
 _global_script_class_icons={
-"client": ""
+"client": "",
+"order": ""
 }
 
 [application]

@@ -2,6 +2,7 @@ extends Control
 
 export var ingrediant = 0
 
+
 onready var button = get_node("Button")
 
 func _ready():
