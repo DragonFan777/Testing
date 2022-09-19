@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://cooking/script/buttonTest.gd" type="Script" id=1]
+[ext_resource path="res://cooking/Resources/client000.tres" type="Resource" id=2]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.709804, 0.686275, 0.686275, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.619608, 0.968627, 0.129412, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.376471, 0.360784, 0.360784, 1 )
+
+[node name="Client" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -844.0
+margin_bottom = -328.0
+script = ExtResource( 1 )
+mind = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = -1.0
+margin_top = 193.0
+margin_right = 173.0
+margin_bottom = 240.0
+theme = SubResource( 1 )
+theme_type_variation = "aa"
+custom_styles/normal = SubResource( 2 )
+text = "Serve"
+
+[node name="Patience" type="ProgressBar" parent="."]
+margin_top = 240.0
+margin_right = 173.0
+margin_bottom = 254.0
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+value = 0.63
+percent_visible = false
+
+[node name="Timer" type="Timer" parent="Patience"]
+
+[node name="ClientBody" type="Panel" parent="."]
+margin_right = 172.0
+margin_bottom = 192.0
+
+[node name="ClientInfo" type="Label" parent="ClientBody"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -61.0
+margin_right = 61.0
+margin_bottom = 57.0
+align = 1
+
+[connection signal="lost_client" from="." to="." method="_on_Client_lost_client"]
+[connection signal="pressed" from="Button" to="." method="test"]
+[connection signal="timeout" from="Patience/Timer" to="." method="_on_Timer_timeout"]
